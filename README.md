@@ -1,8 +1,8 @@
 # Teamproject
-개발환경: JDK,아파치톰캣,이클립스
-개발기간: 8/17 ~ 10/16
-프론트 : html,css,javascript
-서버 : jsp,spring,oracleDB
+개발환경: JDK,아파치톰캣,이클립스 
+개발기간: 8/17 ~ 10/16 
+프론트 : html,css,javascript 
+서버 : jsp,spring,oracleDB 
 
 
 설명 : 디자인 1명,서버 1명으로 2명이서 제작하였습니다. 주제는 옷 쇼핑몰 홈페이지를 제작하기로 했고
