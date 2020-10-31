@@ -4,7 +4,9 @@
 팀원과 함께 서로 배우면서 만들었기에 의미가 있었다고 생각합니다.
 
 개발환경: JDK,아파치톰캣,이클립스
+
 개발기간: 8/17 ~ 10/16
 
 프론트 : html,css,javascript
+
 서버 : jsp,spring,oracleDB
