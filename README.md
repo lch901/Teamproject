@@ -1,7 +1,10 @@
 # Teamproject
 개발환경: JDK,아파치톰캣,이클립스 
+
 개발기간: 8/17 ~ 10/16 
+
 프론트 : html,css,javascript 
+
 서버 : jsp,spring,oracleDB 
 
 
