@@ -1,0 +1,413 @@
+
+/* Universal tags */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    cursor: default;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+
+button{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+
+/* 메뉴상단바 */
+#navbar{
+    position: fixed;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+    padding: 16px;
+    transition: all 300ms ease-in-out;
+    z-index: 1;
+  
+}
+
+/* 상품메뉴 */
+.navbar_menu{
+    display: flex;   
+}
+
+#navbar.navbar--dark{
+    background-color: #fe918d;
+    padding: 10px;
+}
+
+.navbar_menu_item{
+    padding: 8px 12px;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: black;
+}
+
+.navbar_menu_item:hover{
+    color: white;
+}
+
+.navbar_menu .btn{
+    padding: 10px 30px;
+}
+
+#navbar .mainbar{
+    padding-left: 150px;
+}
+
+
+
+/* 메뉴 아이콘 마우스 hover시 배경색 적용 */
+.navbar_menu_item:hover{
+    border-color: white;
+    background-color: #fe918d;
+}
+
+
+/* 메뉴 - 버튼 평소엔 숨기기 */
+.navbar_toggle-btn{
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: white;
+    display: none;
+}
+
+/* =========================================================== */
+
+/* 배너 슬라이드 */
+#home{
+    background-color: transparent;
+    padding: 40px;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.slide_section input[id*="slide"]{
+    display: none;
+}
+
+.slide_section .slidewrap{
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slide_section .slidelist{
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.slide_section .slidelist > li{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    transition: all .5s;
+}
+
+.slide_section .slidelist > li > a{
+    display: block;
+    position: relative;
+}
+
+.slide_section .slidelist > li > a img{
+    width: 100%;
+}
+
+.slide_section .slidelist .slide-control label{
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    padding: 50px;
+    cursor: pointer;
+}
+
+.slide_section .slidelist label{
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    padding: 50px;
+    cursor: pointer;
+}
+
+.slide_section .slidelist .left{
+    left: 30px;
+    background: url('../images/left.png') center / 100% no-repeat;
+}
+
+.slide_section .slidelist .right{
+    right: 30px;
+    background: url('../images/right.png') center / 100% no-repeat;
+}
+
+
+/* 좌우 버튼 클릭시 사진 슬라이드 되게 위치 값 조정하는 효과 */
+.slide_section [id="slide01"]:checked ~ .slidewrap .slidelist > li {transform: translateX(0%);}
+.slide_section [id="slide02"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-100%);}
+.slide_section [id="slide03"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-200%);}
+.slide_section [id="slide04"]:checked ~ .slidewrap .slidelist > li {transform: translateX(-300%);}
+
+
+/* 인기상품 영역 기본설정 */
+#wrap{
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+}
+
+#container{
+    width: 100%;
+    background: none;
+    height: 100%;
+    min-height: calc(100% - 375px);
+    outline: none;
+}
+
+#contents{
+    width: calc(100% - 50px);
+    margin: auto;
+    height: 100%;
+    min-height: 600px;
+}
+
+
+/* 인기상품 타이틀 및 보러가기 영역 */
+.main_list{
+    padding: 85px 0 0 0;
+}
+
+.main_list .title{
+    text-align: center;
+    color: #000;
+}
+
+.main_list .title .link{
+    margin-top: 15px;
+}
+
+.main_list .title .link a{
+    font-size: 16px;
+    color: #fff;
+    background: #000;
+    padding: 10px 50px;
+    display: inline-block;
+}
+
+/* 상품진열 */
+
+.list{
+    padding-top: 85px;
+}
+
+.product ul li{
+    display: inline-block;
+    margin: 0 70px;
+    padding-top: 50px;
+}
+
+.product ul{
+    text-align: center;
+}
+
+
+/* Scroll Arrow up */
+.arrow-up{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    font-size: 40px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 300ms ease-in;
+}
+
+.arrow-up.visible{
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+/* 하단 광고부분 */
+.main_content{
+    width: calc(100% - 50px);
+    height: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    min-height: 600px;
+    padding-top: 100px;
+}
+
+
+.main_content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 1;
+    transition: all 300ms ease-out;
+}
+
+/* .main_content.ani-out{
+    opacity: 0;
+    transform: scale(0.96) translateY(40px);
+} */
+
+.main_ban{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.project_description{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    width: 100%;
+    height: 100%; 
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 300ms ease;
+    transform: translateY(10px);
+    text-align: center;
+}
+
+.project_description h3{
+    font-size: 40px;
+}
+
+.project_description p{
+    font-size: 15px;
+}
+
+.project_description span{
+    color: #fff;
+}
+
+.main_ban:hover .project_description{
+    opacity: 0.5;
+    transform: translateY(0px);
+}
+
+
+
+/* 최하단 footer */
+
+.footer{
+    width: 100%;
+    background: #fe918d;
+    color: white;   
+    margin-top: 50px;
+}
+
+.footer .in .right{
+    text-align: center;
+    padding: 50px;
+}
+
+.footer .in{
+    max-height: 300px;
+}
+
+
+
+/* .footer .in .right{
+    float: right;
+    width: 43%;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 20px;
+} */
+
+
+
+/* For below 1000px Screen width */
+@media screen and (max-width: 1000px){
+    #home{
+        padding-top: 80px;
+    }
+    
+    .main_list{
+        padding-top: 30px;
+    }
+    
+    .main_list .list{
+        padding-top: 0;
+    }
+    .navbar_toggle-btn{
+        display: block;
+        top: 16px;
+        right: 16px;
+    }
+
+    #navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #fe918d;
+    }
+
+    #navbar .navbar_logo img{
+        width: 60%;
+    }
+
+    .navbar_menu{
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        display:none;
+    }
+
+    .navbar_menu.open{
+        display: block;
+    }
+
+    #navbar .navbar_menu .btn{
+        color: white;
+    }
+    
+    .arrow-up{
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        line-height: 50px;
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .list .product .product_list img{
+        width: 260px;
+    }
+
+    .main_ban img, .main_ban .project_description{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+}

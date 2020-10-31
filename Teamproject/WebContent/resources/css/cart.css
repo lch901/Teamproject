@@ -1,0 +1,145 @@
+/* ===================================== Order List========================================= */
+.title {
+    padding-top: 200px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.table1 {
+	width: 100%;
+}
+
+.table1, tr, td {
+	border: 1px solid #d8d7d7;
+	border-collapse: collapse;
+}
+
+.img1 {
+	width: 80px;
+	height: 100px;
+}
+
+.product_select{
+	padding-left: 5px;
+}
+
+.position_center{
+	text-align:center;
+}
+
+.position_center i{
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.headColor{
+	background-color: #f0f0f0;
+}
+
+.headColor td{
+	padding: 5px 0;
+}
+
+
+/* 최종 주문가격및 이전페이지 버튼 영역 */
+.cart_order_result {
+    margin: 59px 0 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.cart_order_result li.result_unit01 {
+    width: 33%;
+}
+
+.cart_order_result li {
+    float: left;
+}
+
+.cart_order_result li.result_unit01 dl {
+    float: left;
+    width: 90.5%;
+}
+
+.cart_order_result li dl {
+    height: 30px;
+    border-bottom: 1px solid #000;
+}
+
+.cart_order_result li dt {
+    float: left;
+    font-size: 12px;
+}
+
+.cart_order_result li dd {
+    float: right;
+    color: #000;
+}
+
+dd {
+    display: block;
+    margin-inline-start: 40px;
+}
+
+dt{
+    padding-top: 5px;
+}
+
+.cart_order_result li.result_unit02 {
+    width: 34%;
+    padding-top: 16px;
+}
+
+.cart_order_result li {
+    float: left;
+}
+
+.cart_order_result li.result_unit02 dl {
+    width: 90.5%;
+    margin: 0 auto;
+}
+
+.cart_order_result li.result_unit03 {
+    width: 33%;
+}
+
+.txt01{
+    text-align: right;
+    font-size: 10px;
+    margin: auto;
+}
+
+.btn_area{
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn_area .btn{
+    display: inline-block;
+    min-width: 148px;
+}
+
+.btn .btn_black{
+    background: #fff;
+    color: #000;
+    font-size: 12px;
+    font-family: "Source Code Pro","Courier New",dotum,"돋움";
+    text-align: center;
+    display: block;
+    height: 30px;
+    padding: 7px 0 0;
+    border: 1px solid #000;
+}
+
+.btn .btn_black:hover{
+	background: #000;
+    color: #fff;
+}
+
+
+
+
+

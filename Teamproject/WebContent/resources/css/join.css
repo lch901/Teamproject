@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*=====================================회원가입 인덱스 페이지 ==================================== */
+div{
+    display: block;
+}
+
+.join_area{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.join_agree_area .space{
+    margin-top: 20px;
+}
+
+.join_agree_area{
+    border-bottom: 1px solid #999999;
+    border-top: 1px solid #999999;
+}
+
+.join_agree_tit{
+    padding: 28px 0 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* 양식부분 */
+.join_mobile_certify{
+    margin-bottom: 17px;
+}
+
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: table;
+    border-color: grey;
+}
+
+.tbl_space{
+    margin-top: 40px;
+}
+
+.tbl_row{
+    width: 100%;
+}
+
+colgroup{
+    display: table-column-group;
+}
+
+col{
+    display: table-column;
+}
+
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr{
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.tbl_row th{
+    height: 50px;
+    padding: 1px 0;
+    color: grey;
+    font-style: normal;
+    text-align: left;
+    letter-spacing: -.5px;
+    font-weight: bold;
+}
+
+.tbl_row .tit_style{
+    padding: 0 0 0 11px;
+    color: #000;
+}
+
+.tbl_row .tit_style .underline{
+    display: inline-block;
+    line-height: 2.1;
+}
+
+.tbl_row td{
+    height: 34px;
+    padding: 1px 0;
+    color: #000;
+    text-align: left;
+}
+
+td{
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+/* 이름 입력칸 */
+.input_txt{
+    display: block;
+    border: 1px solid grey;
+}
+
+.input_txt input{
+    width: 100%;
+    height: 25px;
+    padding: 8px 0;
+    border: none;
+    vertical-align: top;
+    text-indent: 7px;
+}
+
+button, input, select, textarea{
+    margin: 0;
+    font-size: 12px;
+}
+
+/* 성별 */
+label{
+    padding-right: 30px;
+}
+
+.clfix::after, .clfix::before{
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.clfix::after{
+    clear: both;
+}
+
+.form_layout_style .form li{
+    float: left;
+    margin-right: 1%;
+}
+
+li{
+    display: list-item;
+}
+
+ol, ul{
+    list-style: none;
+}
+
+.form_layout_style .form li .last_child{
+    margin-right: 0;
+}
+
+/* 이메일 입력 */
+.tbl_row th .vertical_top{
+    padding-top: 6px;
+    vertical-align: top;
+}
+
+.form_notice_area{
+    padding: 5px 9 11px;
+    color: #000;
+}
+
+/* 회원가입 버튼 */
+.btn_area{
+    padding: 20px 0 0;
+    text-align: center;
+}
+
+.btn_black01{
+    background: #000;
+    color: white;
+}
+
+.btn_black01{
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    height: 40px;
+    padding: 10px 0 0;
+    border: 1px solid #000;
+}
+
+a{
+    text-decoration: none;
+}

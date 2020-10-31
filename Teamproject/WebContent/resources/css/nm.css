@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.title{
+	padding-top:120px;
+	font-size: 32px;
+	text-align:center;
+}
+
+.nm{
+	list-style-type:none;
+}
+.nm > .nm-item{
+	display:flex;
+	justify-content: center;
+}
+.nm li{
+	margin:0 20px;
+}
+.nm a{
+	margin:5px;
+	text-decoration: none;
+	color:black;
+}
+.nm a:hover{
+	opacity: 0.5;
+}

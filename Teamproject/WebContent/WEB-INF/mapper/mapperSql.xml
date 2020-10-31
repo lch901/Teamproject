@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="test_db">
+ 	<!-- member테이블 -->
+ 	<select id="select_member_num" resultType="java.lang.Integer">
+ 		<![CDATA[
+ 			select nvl(count(*),0)+1 from member
+ 		]]>
+ 	</select>
+ 	<insert id="insert_data" parameterType="beans.DataBean">
+ 	   <![CDATA[
+ 	   		insert into member(i_member,id,pw,name,tel,email,addr,sex)
+ 	   		values(#{i_member},#{id},#{pw},#{name},#{tel},#{email},#{addr},#{sex})
+ 	   ]]>
+ 	</insert>
+ 	
+ 	<select id="select_id" parameterType="beans.DataBean" resultType="beans.DataBean">
+ 		select * from member where id=#{id}
+ 	</select>
+ 	
+ 	<select id="select_member" resultType="beans.DataBean">
+ 		<![CDATA[
+ 			select * from member
+ 		]]>
+ 	</select>
+ 	
+ 	<update id="update_member" parameterType="beans.DataBean" >
+ 		<![CDATA[
+ 			update member set pw=#{pw},name=#{name},tel=#{tel},email=#{email},addr=#{addr} where id=#{id}
+ 		]]>
+ 	</update>
+ 	
+ 	<delete id="delete_member" parameterType="beans.DataBean">
+ 		<![CDATA[
+ 			delete from member where id=#{id} and pw=#{pw}
+ 		]]>
+ 	</delete>
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	<!-- product테이블 -->
+ 	<select id="select_product" resultType="beans.DataBean">
+ 		<![CDATA[
+ 			select * from product order by i_product asc
+ 		]]>
+ 	</select>
+ 	<select id="select_product_count" resultType="java.lang.Integer">
+ 		<![CDATA[
+ 			select count(*) from product
+ 		]]>
+ 	</select>
+ 	<select id="select_i_product" resultType="beans.DataBean">
+ 		<![CDATA[
+ 			select * from product where i_product=#{i_product} order by i_product asc
+ 		]]>
+ 	</select>
+ 	
+ 	<!-- product_import테이블 -->
+ 	<select id="select_product_import" resultType="beans.DataBean">
+ 		<![CDATA[
+ 			select * from product_import
+ 		]]>
+ 	</select>
+ 	<update id="update_product_import" parameterType="beans.DataBean">
+ 		<![CDATA[
+ 			update product_import set qty=qty+#{qty} where colorSize=#{colorSize} and i_member=#{i_member}
+ 		]]>
+ 	</update>
+ 	<select id="select_cart" resultType="beans.DataBean">
+ 		<![CDATA[
+ 			select b.i_pi,a.name,b.colorsize,a.pic,a.info,a.price,b.qty,b.i_member,a.i_product,a.category from product a inner join product_import b on b.i_product = a.i_product order by b.i_pi
+ 		]]>
+ 	</select>
+ 	<update id="update_cart" parameterType="java.lang.Integer"><!-- qty는 정수 -->
+ 		<![CDATA[
+ 			update product_import set qty=#{qty} where i_pi=#{i_pi}
+ 		]]>
+ 	</update>
+ 	<update id="update_cart2" parameterType="beans.DataBean"><!-- colorSize는 문자열, DataBean을 써도됨-->
+ 		<![CDATA[
+ 			update product_import set colorSize=#{colorSize} where i_pi=#{i_pi}
+ 		]]>
+ 	</update>
+ 	
+ 	<delete id="delete_product_import_cart_one" parameterType="beans.DataBean">
+ 		<![CDATA[
+ 			delete from product_import where i_pi=#{i_pi}
+ 		]]>
+ 	</delete>
+ 	<delete id="delete_product_import_cart_total" parameterType="beans.DataBean">
+ 		<![CDATA[
+ 			delete from product_import where i_member=#{i_member}
+ 		]]>
+ 	</delete>
+ 	
+ 	<select id="select_cart_count" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+ 		select count(*) from product_import where i_member=#{i_member}
+ 	</select>
+ 	
+ 	<select id="select_product_import_num" resultType="java.lang.Integer">
+ 		<![CDATA[
+ 			select nvl(max(i_pi),0)+1 from product_import
+ 		]]>
+ 	</select>
+ 	<insert id="insert_product_import">
+ 		<![CDATA[	
+ 			insert into product_import(i_pi,i_product,i_member,qty,colorSize)values(#{i_pi},#{i_product},#{i_member},#{qty},#{colorSize})
+ 		]]>
+ 	</insert>
+ 	
+ 	
+ 	<!-- product_order테이블 -->
+ 	<select id="select_product_order" parameterType="beans.DataBean" resultType="beans.DataBean" >
+ 		<![CDATA[
+ 			select * from product_order where i_date between to_date(#{firstDate}) and to_date(#{lastDate}) order by i_date desc
+ 		]]>
+ 	</select>
+ 	<insert id="insert_product_order">
+ 		<![CDATA[
+ 			insert into product_order(i_po,i_member,pic,name,colorSize,price,qty)values(#{i_po},#{i_member},#{pic},#{name},#{colorSize},#{price},#{qty})
+ 		]]>
+ 	</insert>
+ 	<select id="select_product_order_num" resultType="java.lang.Integer" >
+ 		<![CDATA[
+ 			select nvl(max(i_po),0)+1 from product_order
+ 		]]>
+ 	</select>
+ 	
+ </mapper>
